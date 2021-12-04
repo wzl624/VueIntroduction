@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./node_modules/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      {{msg}}
+      <div>{{tenYearsOld}}</div>
+    </div>
+    <script>
+      //1.缓存
+      //2.可读性
+      //3.多（依赖于多个属性）对一（返回一个属性）的关系
+      const app = new Vue({
+        el: "#app",
+        data: {
+          age:18,
+          msg: "hello world",
+        },
+        // this.age 属性
+        // return 新属性
+        // 计算属性其实就是一个依赖于其他属性的属性
+        computed: {
+          tenYearsOld() {
+            console.log("tenyearsold");
+            return this.age + 10 + this.msg; 
+          }
+        },
+      });
+    </script>
+  </body>
+</html>

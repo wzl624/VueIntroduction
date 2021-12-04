@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./node_modules/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      {{msg}}
+      <div v-if="age === 10">10</div>
+      <div v-else-if="age === 20">20</div>
+      <div v-else>other</div>
+      <div v-show="isShow">show</div>
+      <div v-if="isDiff">if</div>
+      <div v-show="isDiff">show</div>
+
+    </div>
+    <script>
+        // if(){
+            
+        // }else if (){
+            
+        // }else{
+
+        // }
+      const app = new Vue({
+        el: "#app",
+        data: {
+          msg: "hello world",
+          age:10,
+          isShow:true,
+          isDiff:true,
+        },
+      });
+    </script>
+  </body>
+</html>

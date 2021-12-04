@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./node_modules/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      {{msg}}
+      <div>
+          <ul>
+              <li v-for="(user,index) in users",:key="index">{{index}}---{{user}}</li>
+          </ul>
+      </div>
+
+      <div v-for="item in items" :key="item.id">
+          {{ item }}
+      </div>
+
+      <div>
+        <ul>
+            <li v-for="(u,key,index) in userInfo">{{index}}---{{key}}---{{u}}</li>
+        </ul>
+    </div>
+    </div>
+    <script>
+        //js ->for for in for of for each
+        //vue -> for in
+      const app = new Vue({
+        el: "#app",
+        data: {
+          msg: "hello world",
+          users:[
+              {
+                  age:18,
+                  name:"xiaohei",
+              },
+              {
+                  age:19,
+                  name:"xiaohong",
+              }
+          ],
+          userInfo:{
+              xiaohei:{
+                  age:18,
+              },
+              xiaohong:{
+                  age:19,
+              }
+          }
+        },
+      });
+    </script>
+  </body>
+</html>

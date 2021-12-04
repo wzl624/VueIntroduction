@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./node_modules/vue/dist/vue.js"></script>
+  </head>
+  <style>
+      .red{
+          color: red;
+      }
+
+      .blue{
+          color: blue;
+      }
+
+      .fontSize{
+          font-size: 50px;
+      }
+  </style>
+  <body>
+    <div id="app">
+      {{msg}}
+      <!-- <div :class="classes">color</div> -->
+      <div :style="styleInfo">color</div>
+    </div>
+    <script>
+      const app = new Vue({
+        el: "#app",
+        data: {
+          msg: "hello world",
+          currentColor:"red",
+          styleInfo:[
+              {
+                  color:"red"
+              },
+              {
+                  fontSize:"50px"
+              }
+          ]
+        },
+        computed:{
+            classes(){
+                return [
+                    {
+                        red:this.currentColor === 'red'
+                    },
+                    "fontSize"
+                ]
+            }
+        }
+      });
+    </script>
+  </body>
+</html>

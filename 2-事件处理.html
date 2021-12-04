@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./node_modules/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+        {{count}}
+        <button v-on:click.once="onClick">click</button>
+        <!-- <button v-on:click="count++">click</button> -->
+        <!-- <button @click="handleClick(1,$event)">click</button> -->
+    </div>
+    <script>
+        //v-on: 事件绑定指令 ->@
+      const app = new Vue({
+        el: "#app",
+        data: {
+            count:0,
+        },
+        methods:{
+            onClick(e){
+                this.count++;
+                console.log(e);
+            },
+            handleClick(type,e){
+                if(type === 1){
+                    console.log(e)
+                    this.count++;
+                }else{
+                    console.log("clicked")
+                };
+            }
+        },
+      });
+    </script>
+  </body>
+</html>
